@@ -1,73 +1,55 @@
+import Hero from './components/Hero';
+import BrandAesthetic from './components/BrandAesthetic';
+import LaunchBeats from './components/LaunchBeats';
+import Positioning from './components/Positioning';
+
 function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-      {/* Subtle pattern overlay */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.05),transparent_50%)]"></div>
-
-      <div className="relative min-h-screen flex items-center justify-center p-8">
-        <div className="max-w-2xl w-full">
-          {/* Header with Flames icon */}
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center justify-center mb-6">
-              <img
-                src="/flame-icon.svg"
-                alt="Flames"
-                className="w-24 h-24 drop-shadow-[0_0_25px_rgba(59,130,246,0.5)]"
-              />
-            </div>
-
-            <h1 className="text-5xl font-bold text-white mb-4 tracking-tight">
-              Flames Blue
-            </h1>
-
-            <p className="text-xl text-blue-200 mb-6">
-              Build applications through conversation
-            </p>
-          </div>
-
-          {/* Instructions */}
-          <div className="bg-slate-800/50 backdrop-blur-sm border border-blue-500/20 rounded-2xl p-8 shadow-xl mb-6">
-            <div className="flex items-start gap-4 mb-6">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                1
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Describe your idea</h3>
-                <p className="text-blue-200/80 text-sm">Use the chat panel on the left to tell the AI what you want to build</p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4 mb-6">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                2
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Watch it build</h3>
-                <p className="text-blue-200/80 text-sm">Your app will appear in this preview as the AI generates the code</p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                3
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Refine and iterate</h3>
-                <p className="text-blue-200/80 text-sm">Continue the conversation to add features and make changes</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Footer */}
-          <div className="text-center">
-            <p className="text-sm text-blue-300/60">
-              No coding required • Just describe what you want
-            </p>
-          </div>
+    <div className="min-h-screen bg-slate-950 text-white">
+      {/* Navigation */}
+      <header className="fixed top-0 inset-x-0 z-50">
+        <div className="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between">
+          <a href="#" className="flex items-center gap-2 font-bold tracking-tight">
+            <span className="h-2 w-2 rounded-full bg-violet-400 shadow-[0_0_20px_rgba(167,139,250,0.8)]" />
+            ChampionTrackPro
+          </a>
+          <nav className="hidden sm:flex items-center gap-6 text-sm text-white/80">
+            <a href="#brand" className="hover:text-white">Brand</a>
+            <a href="#story" className="hover:text-white">Launch Video</a>
+            <a href="#positioning" className="hover:text-white">Positioning</a>
+            <a href="#cta" className="px-3 py-1.5 rounded-lg bg-white/10 border border-white/10 hover:bg-white/15">Request Access</a>
+          </nav>
         </div>
-      </div>
+      </header>
+
+      <main className="relative">
+        <Hero />
+        <BrandAesthetic />
+        <LaunchBeats />
+        <Positioning />
+
+        {/* CTA */}
+        <section id="cta" className="relative py-20">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(167,139,250,0.14),transparent_40%)]" />
+          <div className="relative max-w-3xl mx-auto px-6 text-center">
+            <h3 className="text-2xl sm:text-3xl font-bold">Bring precision to your program</h3>
+            <p className="mt-3 text-white/80">Join the early access cohort for pro teams and universities.</p>
+            <form className="mt-6 grid grid-cols-1 sm:grid-cols-[1fr_auto] gap-3">
+              <input required type="email" placeholder="Work email" className="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 outline-none focus:ring-2 focus:ring-violet-400 placeholder:text-white/50" />
+              <button className="rounded-xl bg-violet-500 hover:bg-violet-400 px-6 py-3 font-semibold shadow-lg shadow-violet-500/30" type="submit">Request Access</button>
+            </form>
+            <p className="mt-3 text-xs text-white/60">No spam — we’ll follow up with next steps.</p>
+          </div>
+        </section>
+      </main>
+
+      <footer className="relative border-t border-white/10 py-8 text-center text-white/50">
+        <div className="max-w-6xl mx-auto px-6">
+          © {new Date().getFullYear()} ChampionTrackPro. All rights reserved.
+        </div>
+      </footer>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
